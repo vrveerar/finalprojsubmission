@@ -1,0 +1,47 @@
+{
+  "entrypoint": "index.html",
+  "shell": "src\\main-app.js",
+  "fragments": [],
+  "sources": [
+    "images/**/*",
+    "src/**.js",
+    "package.json",
+    "**.css",
+    "index.html",
+    "src/main-app.js"
+  ],
+  "extraDependencies": [
+    "bower_components/webcomponentsjs/*.js",
+    "node_modules/@webcomponents/webcomponentsjs/*.js",
+    "!node_modules/@webcomponents/webcomponentsjs/gulpfile.js",
+    "node_modules/@webcomponents/webcomponentsjs/bundles/*.js",
+    "node_modules/web-animations-js/web-animations-next-lite.min.js"
+  ],
+  "builds": [
+    {
+      "name": "es6-unbundled",
+      "browserCapabilities": [
+        "es2015",
+        "push"
+      ],
+      "js": {
+        "minify": true,
+        "compile": "es2015",
+        "transformModulesToAmd": true
+      },
+      "css": {
+        "minify": true
+      },
+      "html": {
+        "minify": true
+      },
+      "bundle": false,
+      "addServiceWorker": true,
+      "addPushManifest": true,
+      "preset": "es6-unbundled"
+    }
+  ],
+  "npm": true,
+  "componentDir": "node_modules/",
+  "moduleResolution": "node"
+}
